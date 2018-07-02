@@ -1,0 +1,197 @@
+<nav class="navbar navbar-inverse ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+        </div>
+    </div>
+
+    </div>
+    <ul class="nav navbar-nav" style="padding-left: 50px; padding-right: 30px;">
+        <a class="navbar-brand" href="/" style="font-size: 20px;color:#ffffff;font-family:Impact, Haettenschweiler">ReDose</a>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="/" style="font-family: Verdana, Geneva, Tahoma, sans-serif">Home</a></li>
+        <li><a href="/signup" style="font-family: Verdana, Geneva, Tahoma, sans-serif"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/signin" style="font-family: Verdana, Geneva, Tahoma, sans-serif;padding-right: 30px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    </div>
+</nav>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!--firebase auth section
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js"></script>
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAitDH_LFLAD49d-R6qcr5vDVJmJd4GAwg",
+        authDomain: "ngdemo-2a02f.firebaseapp.com",
+        databaseURL: "https://ngdemo-2a02f.firebaseio.com",
+        projectId: "ngdemo-2a02f",
+
+        messagingSenderId: "25919456917"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+<script type="text/javascript">
+    var uiConfig = {
+        signInSuccessUrl: 'editor',
+        signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+            firebase.auth.GithubAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.PhoneAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        //   tosUrl: '<your-tos-url>'
+    };
+
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js">
+</script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase-auth.js">
+</script>
+
+</script>
+
+<script>
+    var config = {
+        apiKey: "AIzaSyAitDH_LFLAD49d-R6qcr5vDVJmJd4GAwg",
+        authDomain: "ngdemo-2a02f.firebaseapp.com",
+        databaseURL: "https://ngdemo-2a02f.firebaseio.com",
+        projectId: "ngdemo-2a02f",
+
+        messagingSenderId: "25919456917"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+    initApp = function() {
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // User is signed in.
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var uid = user.uid;
+                var phoneNumber = user.phoneNumber;
+                var providerData = user.providerData;
+                user.getIdToken().then(function(accessToken) {
+                    document.getElementById('sign-in-status').textContent = 'Signed in';
+                    document.getElementById('sign-in').textContent = 'Sign out';
+                    document.getElementById('account-details').textContent = JSON.stringify({
+                        displayName: displayName,
+                        email: email,
+                        emailVerified: emailVerified,
+                        phoneNumber: phoneNumber,
+                        photoURL: photoURL,
+                        uid: uid,
+                        accessToken: accessToken,
+                        providerData: providerData
+                    }, null, '  ');
+                });
+            } else {
+                // User is signed out.
+                document.getElementById('sign-in-status').textContent = 'Signed out';
+                document.getElementById('sign-in').textContent = 'Sign in';
+                //document.getElementById('account-details').textContent = 'null';
+            }
+        }, function(error) {
+            console.log(error);
+        })
+    };
+
+    window.addEventListener('load', function() {
+        initApp()
+    });
+</script>
+-->
+<div class="container-fluid">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Sign Up</div>
+
+                <div class="panel-body">
+                    <form id="signupform" class="form-horizontal" role="form" onsubmit="Signup(signupform)">
+
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-3 control-label" required>Email</label>
+                            <div class="col-md-9">
+                                <input type="text" id="email" class="form-control" name="email" placeholder="Email Address" required email>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-3 control-label">First Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="lastname" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" id="passo" class="form-control" name="passwd" placeholder="Password" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="icode" class="col-md-3 control-label">Invitation Code</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="icode" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Button -->
+                            <div class="col-md-offset-5 col-md-9">
+                                <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Sign Up</button>
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
