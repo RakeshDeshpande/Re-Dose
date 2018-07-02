@@ -1,0 +1,32 @@
+{
+  "name": "redose",
+  "version": "1.0.0",
+  "description": "This will help you store your important data with in cloud and help you track wherever you'd require online. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "images",
+    "files",
+    "photos",
+    "memories",
+    "clothes",
+    "dress",
+    "password",
+    "username"
+  ],
+  "author": "Rakesh Deshpande",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "firebase": "^5.1.0",
+    "firebase-admin": "^5.12.1",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.17.5",
+    "path": "^0.12.7"
+  }
+}
